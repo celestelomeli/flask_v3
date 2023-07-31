@@ -1,0 +1,47 @@
+<!-- templates/base.html -->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{% block title %}{% endblock %} </title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    </head>
+    <body>
+        <header>
+            <h1>Who's Moose?
+            <img src="images/labrador_retriever.png" alt="Moose headshot photo">
+            </h1>
+        </header>
+
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/about_our_family">About Our Family</a></li>
+                <li><a href="/meet_our_dog">Meet Our Dog</a></li>
+                <li><a href="/gallery">Gallery</a></li>
+            </ul>
+        </nav>
+
+        <main>
+            {% block content %}{%endblock %}
+        </main>
+
+        <footer>
+            <div class="footer-section left-section">
+                <h2>About Me</h2>
+                <p>
+                Hello, I'm Celeste Lomeli. I created this website to
+                showcase as a personal project and share our 
+                experiences with our dog Moose. Feel free to reach 
+                out to me if you have any questions or feedback! </p>
+            </div>
+
+            <div class="footer-section center-section">
+                <h2>Contact Information</h2>
+                <p>
+                    Email: celesteelomeli@gmail.com
+                </p>
+            </div>
+        </footer>
+</body>
+</html>
