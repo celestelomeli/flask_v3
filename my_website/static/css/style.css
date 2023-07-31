@@ -1,0 +1,105 @@
+/* static/css/style.css */
+
+body, h1, h2, h3, h4, h5, h6, p, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+}
+
+header { 
+    background-color: #F2AA5F;
+    color: #fff;
+    text-align: left;
+    padding: 20px;
+}
+
+nav {
+    background-color: #76ABDB;
+    padding: 10px 0;
+}
+
+
+nav ul {
+    list-style: none;
+    text-align: right;
+}
+
+nav li {
+    display: inline-block;
+    margin: 0 10px
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 8px 16px;
+}
+
+nav a:hover {
+    background-color: #666;
+}
+
+main {
+    padding: 40px; /* Add padding around the main content */
+    background-color: #fff; /* Set a background color for the main content */
+    margin-left: 350px; /* Align main content slightly to the right */
+}
+
+footer {
+    width: 100%;
+    background-color: #E3EFFA;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 500px;
+}
+
+.footer-section {
+    flex:1;
+    padding: 20px;
+}
+
+.left-section {
+    background-color: #E3EFFA;
+    padding: 20px;
+    font-size: 15px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+
+.left-section h2 {
+    font-size: 18px;
+    margin-bottom: 0px;
+    font-family: "Arial", sans-serif;
+    color: #333;
+  }
+  
+.left-section p {
+    margin-bottom: 8px;
+    color: #555;
+    white-space: pre-line;
+}
+
+.center-section {
+    background-color: #E3EFFA;
+    padding: 20px;
+    font-size: 15px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.center-section p {
+    margin-bottom: 8px;
+    color: #555;
+    white-space: pre-line;
+}
+
+.contact-info, .about-me {
+    margin-bottom: 20px
+}
+
