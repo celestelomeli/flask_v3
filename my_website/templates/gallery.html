@@ -1,0 +1,15 @@
+<!-- templates/gallery.html -->
+
+{% extends 'base.html' %}
+
+{% block title %}Gallery{% endblock %}
+
+{% block content %}
+    <h1>Memories</h1>
+    <h3>Welcome to our webpage, where we present a delightful assortment of funny, serious, and heartwarming pictures of our dog over the years. From playful puppy moments that evoke laughter to serene snapshots reflecting profound companionship, this collection captures the diverse range of emotions our furry friend has brought into our lives. Join us on this visual journey as we celebrate the cherished memories and unforgettable experiences shared with our beloved canine companion.</h3>
+    <div class="gallery">
+        {% for photo in photos %}
+            <img src="{{ url_for('static', filename='photos/' + photo) }}" alt="{{ photo }}">
+        {% endfor %}
+    </div>
+{% endblock %}

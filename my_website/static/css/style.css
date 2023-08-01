@@ -11,10 +11,21 @@ body {
 }
 
 header { 
+    
+    display: flex;
     background-color: #F2AA5F;
     color: #fff;
-    text-align: left;
+    align-items: left;
     padding: 20px;
+}
+
+.logo img {
+    width: 40px; /* Set the width of your logo image (adjust as needed) */
+    height: auto; /* Automatically adjust the height to maintain the aspect ratio */
+  }
+
+h1 {
+    margin: 0;
 }
 
 nav {
@@ -49,57 +60,37 @@ main {
     margin-left: 350px; /* Align main content slightly to the right */
 }
 
+main h3 {
+    margin-top: 20px; /* Add desired space between h1 and h2 */
+  }
+
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-gap: 10px;
+}
+
+.gallery img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
 footer {
     width: 100%;
     background-color: #E3EFFA;
-    padding: 20px;
-    display: flex;
-    justify-content: space-between;
+    padding: 0 10px;
+    text-align: center;
+    font-family: "Arial", sans-serif;
     margin-top: 500px;
 }
 
-.footer-section {
-    flex:1;
-    padding: 20px;
-}
-
-.left-section {
-    background-color: #E3EFFA;
-    padding: 20px;
-    font-size: 15px;
-    margin-bottom: 10px;
+.about-me, .contact-info {
+    margin-top: 0 10px;
+    margin-bottom: 0 20px;
     color: #333;
-}
-
-
-.left-section h2 {
-    font-size: 18px;
-    margin-bottom: 0px;
-    font-family: "Arial", sans-serif;
-    color: #333;
-  }
-  
-.left-section p {
-    margin-bottom: 8px;
-    color: #555;
     white-space: pre-line;
+
 }
 
-.center-section {
-    background-color: #E3EFFA;
-    padding: 20px;
-    font-size: 15px;
-    margin-bottom: 10px;
-    color: #333;
-}
-
-.center-section p {
-    margin-bottom: 8px;
-    color: #555;
-    white-space: pre-line;
-}
-
-.contact-info, .about-me {
-    margin-bottom: 20px
-}
 
