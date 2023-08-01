@@ -1,4 +1,5 @@
 from flask import Flask, render_template 
+import os
 
 app = Flask(__name__)
 
@@ -13,6 +14,13 @@ def about_our_family():
 @app.route('/meet_our_dog')
 def meet_our_dog():
     return render_template('meet_our_dog.html')
+
+@app.route('/gallery')
+def gallery():
+        photo_path = 'static/photos/'
+        photos = [photo for photo in os.listdir(photo_path) if photo.endswith(('jpg', 'png', 'jpeg', 'gif'))]
+        return render_template('gallery.html', photos=photos)
+
 
 if __name__ == '__main__':
     app.run(debug=True)
