@@ -17,9 +17,10 @@ def meet_our_dog():
 
 @app.route('/gallery')
 def gallery():
-        photo_path = 'static/photos/'
-        photos = [photo for photo in os.listdir(photo_path) if photo.endswith(('jpg', 'png', 'jpeg', 'gif'))]
-        return render_template('gallery.html', photos=photos)
+    return render_template('gallery.html')
+    #photo_path = 'static/photos/'
+    #photos = [photo for photo in os.listdir(photo_path) if photo.endswith(('jpg', 'png', 'jpeg', 'gif'))]
+    #return render_template('gallery.html', photos=photos)
 
 
 if __name__ == '__main__':

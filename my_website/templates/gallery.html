@@ -4,12 +4,31 @@
 
 {% block title %}Gallery{% endblock %}
 
+
 {% block content %}
     <h1>Memories</h1>
     <h3>Welcome to our webpage, where we present a delightful assortment of funny, serious, and heartwarming pictures of our dog over the years. From playful puppy moments that evoke laughter to serene snapshots reflecting profound companionship, this collection captures the diverse range of emotions our furry friend has brought into our lives. Join us on this visual journey as we celebrate the cherished memories and unforgettable experiences shared with our beloved canine companion.</h3>
-    <div class="gallery">
+    <!--div class="gallery">
         {% for photo in photos %}
             <img src="{{ url_for('static', filename='photos/' + photo) }}" alt="{{ photo }}">
         {% endfor %}
+    </div> -->
+    <div class="slideshow-container">
+        <img class="slide" src="{{ url_for('static', filename='photos/photo.jpg') }}" alt="Photo 1"
+        width="300" height="300">
+        <img class="slide" src="{{ url_for('static', filename='photos/photo2.jpg') }}" alt="Photo 2"
+        width="300" height="300">
+        <img class="slide" src="{{ url_for('static', filename='photos/photo3.jpg') }}" alt="Photo 3"
+        width="300" height="300">
+        <img class="slide" src="{{ url_for('static', filename='photos/photo4.jpg') }}" alt="Photo 3"
+        width="300" height="300">
+        <!-- Add more images as needed -->
+
+        <!-- Navigation buttons -->
+        <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+        <a class="next" onclick="changeSlide(1)">&#10095;</a>
     </div>
+
+    <script src="{{ url_for('static', filename='js/slideshow.js') }}"></script>
+
 {% endblock %}
