@@ -23,6 +23,15 @@ header {
     width: 40px; /* Set the width of your logo image (adjust as needed) */
     height: auto; /* Automatically adjust the height to maintain the aspect ratio */
   }
+  .logo {
+    display: flex; /* Optional: Use flexbox for better alignment */
+    align-items: center; /* Optional: Vertically center the items */
+    margin-bottom: 10px; /* Adjust the margin as needed */
+}
+
+.logo img {
+    margin-right: 10px; /* Adjust the margin as needed */
+}
 
 h1 {
     margin: 0;
