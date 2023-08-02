@@ -57,17 +57,23 @@ nav a:hover {
 main {
     padding: 40px; /* Add padding around the main content */
     background-color: #fff; /* Set a background color for the main content */
-    margin-left: 350px; /* Align main content slightly to the right */
+    margin-left: 150px; /* Align main content slightly to the right */
+    margin-right: 150px;
 }
 
 main h3 {
     margin-top: 20px; /* Add desired space between h1 and h2 */
   }
 
+  .center-aligned {
+    text-align: center;
+    position: relative;
+}
+
   .gallery {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    grid-gap: 10px;
+    grid-gap: 50px;
 }
 
 .gallery img {
