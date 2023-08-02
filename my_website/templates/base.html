@@ -9,9 +9,9 @@
     <body>
         <header>
             <div class="logo">
-                <img src="images/labrador_retriever.png" alt="Labrador Retriever">
+                <img src="{{ url_for('static', filename='photos/labrador_retriever.png') }}" alt="Labrador Logo">
                 </div>
-            <h1>Who's Moose?</h1>
+            <h1>Who's Moose</h1>
          </header>
 
         <nav>
@@ -23,9 +23,21 @@
             </ul>
         </nav>
 
-        <main class="center-aligned">
+      <!--  <main class="center-aligned">
             {% block content %}{%endblock %}
-        </main>
+        </main> -->
+
+        {% block main_content %}
+            <main>
+                {% block main_section_1 %}{% endblock %}
+            </main>
+
+            {% block fun_facts %}{% endblock %}
+            {% block quotes %}{% endblock %}
+            {% block map %}{% endblock %}
+        {% endblock %}
+
+
 
         <footer>
             <div class="about-me">
