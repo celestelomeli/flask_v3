@@ -70,7 +70,48 @@ main h3 {
     position: relative;
 }
 
-  .gallery {
+.slideshow-container {
+    position: relative;
+    max-width: 1000px;
+    margin: auto;
+    height: 500px;
+}
+
+
+.slide {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto; /* Center the .slide element */
+}
+
+.slide img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 24px;
+    padding: 10px;
+}
+
+.prev {
+    left: 0;
+}
+
+.next {
+    right: 0;
+}
+
+ /* .gallery { 
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     grid-gap: 50px;
@@ -80,7 +121,7 @@ main h3 {
     width: 100%;
     height: auto;
     border-radius: 5px;
-}
+} */
 
 footer {
     width: 100%;
