@@ -7,14 +7,14 @@ body, h1, h2, h3, h4, h5, h6, p, ul, li {
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #f9f9f9;
+    background-color: #54829E;
 }
 
 header { 
     
     display: flex;
-    background-color: #F2AA5F;
-    color: #fff;
+    background-color: #FC9443;
+    color: #523005;
     align-items: left;
     padding: 20px;
 }
@@ -38,7 +38,7 @@ h1 {
 }
 
 nav {
-    background-color: #76ABDB;
+    background-color: #E3EFFA;
     padding: 10px 0;
 }
 
@@ -54,7 +54,7 @@ nav li {
 }
 
 nav a {
-    color: #fff;
+    color: #765318;
     text-decoration: none;
     padding: 8px 16px;
 }
@@ -65,9 +65,10 @@ nav a:hover {
 
 main {
     padding: 40px; /* Add padding around the main content */
-    background-color: #fff; /* Set a background color for the main content */
+    background-color: #FCCF85; /* Set a background color for the main content */
     margin-left: 150px; /* Align main content slightly to the right */
     margin-right: 150px;
+    margin-top: 20px;
 }
 
 main h3 {
@@ -77,6 +78,72 @@ main h3 {
   .center-aligned {
     text-align: center;
     position: relative;
+}
+
+#fun-facts-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #FC9443;
+    padding: 70px;
+    border-radius: 5px;
+    /*box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);*/
+    width: 500px;
+    margin-left: 80px;
+    margin-top: 20px;
+    /*text-align: center;*/
+}
+
+#fun-facts h2 {
+    color: blue;
+    margin-bottom: 20px; 
+}
+
+#fun-facts-list {
+    list-style-type: square;
+    margin-left: 50px;
+    margin-top: 30px;
+}
+
+#fun-facts-list li {
+    margin-left: 0px;
+    margin-bottom: 20px;
+    word-wrap: break-word;
+}
+
+#breed-traits-container {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #FC9443;
+    padding: 70px;
+    border-radius: 5px;
+    /*box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);*/
+    float: right;
+    width: 500px; /* Adjust the width as needed */
+    margin-left: 750px; /* Adjust the margin as needed */
+    margin-right: 500px;
+    margin-top: -680px; /* Adjust the margin as needed */
+      
+}
+
+#breed-traits h2 {
+    color: blue;
+    margin-bottom: 20px; 
+}
+
+#breed-traits-list {
+    list-style-type: square;
+    margin-left: 50px;
+    margin-top: 30px;
+}
+
+#breed-traits-list li {
+    margin-left: 0px;
+    margin-bottom: 20px;
+    word-wrap: break-word;
 }
 
 .slideshow-container {
