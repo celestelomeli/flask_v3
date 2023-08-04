@@ -7,14 +7,14 @@ body, h1, h2, h3, h4, h5, h6, p, ul, li {
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #54829E;
+    background-color: #023246;
 }
 
 header { 
     
     display: flex;
-    background-color: #FC9443;
-    color: #523005;
+    background-color: #287094;
+    color: #ECE9E9;
     align-items: left;
     padding: 20px;
 }
@@ -38,14 +38,14 @@ h1 {
 }
 
 nav {
-    background-color: #E3EFFA;
+    background-color: #97CADB;
     padding: 10px 0;
 }
 
 
 nav ul {
     list-style: none;
-    text-align: right;
+    text-align: left;
 }
 
 nav li {
@@ -54,18 +54,20 @@ nav li {
 }
 
 nav a {
-    color: #765318;
+    color: #333;
     text-decoration: none;
     padding: 8px 16px;
+    font-weight: bold;
+    font-size: 18px;
 }
 
 nav a:hover {
-    background-color: #666;
+    background-color: #F0F6F7;
 }
 
 main {
     padding: 40px; /* Add padding around the main content */
-    background-color: #FCCF85; /* Set a background color for the main content */
+    background-color: #CECEE1; /* Set a background color for the main content */
     margin-left: 150px; /* Align main content slightly to the right */
     margin-right: 150px;
     margin-top: 20px;
@@ -85,13 +87,14 @@ main h3 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #FC9443;
-    padding: 70px;
+    background-color: #D4D4CE;
+    padding: 80px;
     border-radius: 5px;
     /*box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);*/
-    width: 500px;
-    margin-left: 80px;
-    margin-top: 20px;
+    width: 470px;
+    margin-left: 110px;
+    margin-top: 30px;
+    height: 560px;
     /*text-align: center;*/
 }
 
@@ -112,35 +115,34 @@ main h3 {
     word-wrap: break-word;
 }
 
-#breed-traits-container {
+#breed-information-container {
     position: absolute;
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #FC9443;
-    padding: 70px;
+    background-color: #D4D4CE;
+    padding: 60px;
     border-radius: 5px;
     /*box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);*/
     float: right;
     width: 500px; /* Adjust the width as needed */
-    margin-left: 750px; /* Adjust the margin as needed */
-    margin-right: 500px;
-    margin-top: -680px; /* Adjust the margin as needed */
+    margin-left: 755px; /* Adjust the margin as needed */
+    margin-top: -720px; /* Adjust the margin as needed */
       
 }
 
-#breed-traits h2 {
+#breed-information h2 {
     color: blue;
     margin-bottom: 20px; 
 }
 
-#breed-traits-list {
+#breed-information-list {
     list-style-type: square;
     margin-left: 50px;
     margin-top: 30px;
 }
 
-#breed-traits-list li {
+#breed-information-list li {
     margin-left: 0px;
     margin-bottom: 20px;
     word-wrap: break-word;
@@ -201,7 +203,7 @@ main h3 {
 
 footer {
     width: 100%;
-    background-color: #E3EFFA;
+    background-color: #97CADB;
     padding: 0 10px;
     text-align: center;
     font-family: "Arial", sans-serif;
