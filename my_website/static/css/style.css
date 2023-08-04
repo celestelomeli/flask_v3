@@ -189,6 +189,23 @@ main h3 {
     right: 0;
 }
 
+.video-container {
+    position: relative;
+    max-width: 800px; /* Adjust the maximum width as needed */
+    margin: 0 auto; /* Center the video horizontally */
+}
+
+/* Style for the video element */
+video {
+    width: 100%; /* Make the video element take the full width of its container */
+    height: auto; /* Maintain the video's aspect ratio */
+    display: block;
+    border-radius: 10px; /* Add rounded corners */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+    
+}
+
+
  /* .gallery { 
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
