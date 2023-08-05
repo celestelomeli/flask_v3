@@ -23,6 +23,7 @@ header {
     width: 40px; /* Set the width of your logo image (adjust as needed) */
     height: auto; /* Automatically adjust the height to maintain the aspect ratio */
   }
+
   .logo {
     display: flex; /* Optional: Use flexbox for better alignment */
     align-items: center; /* Optional: Vertically center the items */
@@ -205,6 +206,52 @@ video {
     
 }
 
+/* Add styles specific to the login page */
+.login-container {
+    max-width: 400px;
+    margin: auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.login-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.login-form label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.login-form input {
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.login-form button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.login-form button:hover {
+    background-color: #0056b3;
+}
+
+/* Other styles can be added as needed */
 
  /* .gallery { 
     display: grid;

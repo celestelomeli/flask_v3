@@ -1,7 +1,60 @@
-from flask import Flask, render_template 
+from flask import Flask, render_template, request, redirect, flash
+from flask_login import LoginManager, UserMixin, login_user, login_required, logout_user, current_user
+
+
 import os
 
 app = Flask(__name__)
+app.secret_key = 'Moose_Angel24'  # Replace with a secure secret key
+
+login_manager = LoginManager(app)
+login_manager.login_view = 'login'
+
+
+
+class User(UserMixin):
+    def __init__(self, id):
+        self.id = id
+
+users = {
+    'user1': {'celestelomeli': 'Mellifluous24!'}, 
+    'user2': {'ajramirez': 'moosebaby04'}
+    }
+
+login_manager = LoginManager(app)
+login_manager.login_view = 'login'
+
+@login_manager.user_loader
+def load_user(user_id):
+    return User(user_id)
+
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    if request.method == 'POST':
+        username = request.form['username']
+        password = request.form['password']
+        
+        user_data = users.get(username)
+        if user_data and user_data['password'] == password:
+            user = User(username)
+            login_user(user)
+            flash('Logged in successfully!', 'success')
+            return redirect('/dashboard')
+        else:
+            flash('Invalid username or password', 'error')
+    return render_template('login.html')
+
+@app.route('/dashboard')
+@login_required
+def dashboard():
+    return render_template('dashboard.html', user=current_user)
+
+@app.route('/logout')
+@login_required
+def logout():
+    logout_user()
+    flash('Logged out successfully!', 'success')
+    return redirect('/')
 
 @app.route('/')
 def index():

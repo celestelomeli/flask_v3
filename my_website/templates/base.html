@@ -20,6 +20,12 @@
                 <li><a href="/about_our_family">About Our Family</a></li>
                 <li><a href="/meet_our_dog">Meet Our Dog</a></li>
                 <li><a href="/gallery">Gallery</a></li>
+                {% if current_user.is_authenticated %}
+                    <li><a href="/dashboard">Dashboard</a></li>
+                    <li><a href="/logout">Logout</a></li>
+                {% else %}
+                    <li><a href="/login">Login</a></li>
+            {% endif %}
             </ul>
         </nav>
 
