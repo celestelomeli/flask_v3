@@ -71,7 +71,7 @@ main {
     background-color: #CECEE1; /* Set a background color for the main content */
     margin-left: 150px; /* Align main content slightly to the right */
     margin-right: 150px;
-    margin-top: 20px;
+    margin-top: 100px;
 }
 
 main h3 {
@@ -83,12 +83,51 @@ main h3 {
     position: relative;
 }
 
+.dashboard-container {
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    margin-top: 30px;
+}
+
+.dashboard-container h2 {
+    margin-bottom: 10px; /* Add margin below h2 */
+}
+
+.dashboard-container p {
+    margin-top: 10px; /* Add margin above p */
+}
+
+.website-info-container {
+    background-color: #dd6e42;
+    padding: 50px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    margin-top: 60px;
+    margin-left: 50px;
+    margin-right: 50px;
+    border: 2px solid #dd6e42; /* Outer border color and thickness */
+    border-radius: 10px; /* Border radius for rounded corners */
+    outline: 2px solid #dd6e42; /* Inner border color and thickness */
+    outline-offset: -5px; /* Adjust the inner border offset to match the outer border thickness */
+}
+
+.website-info-container h2 {
+    margin-bottom: 15px;
+}
+
+.website-info-container p {
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+
 #fun-facts-container {
     position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #D4D4CE;
+    background-color: #dd6e42;
     padding: 80px;
     border-radius: 5px;
     /*box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);*/
@@ -121,7 +160,7 @@ main h3 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #D4D4CE;
+    background-color: #dd6e42;
     padding: 60px;
     border-radius: 5px;
     /*box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);*/
@@ -208,22 +247,30 @@ video {
 
 /* Add styles specific to the login page */
 .login-container {
-    max-width: 400px;
+    max-width: 1000px;
     margin: auto;
-    padding: 20px;
+    padding: 150px;
     background-color: #fff;
     border-radius: 5px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+
+}
+
+.login-center-aligned {
+    display: flex;
+    justify-content: center; /* Horizontally center the content */
+    align-items: center; /* Vertically center the content */
+    min-height: 100vh; /* Ensure the content takes up at least the viewport height */
 }
 
 .login-title {
-    font-size: 24px;
+    font-size: 30px;
     margin-bottom: 20px;
 }
 
 .login-form {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
 }
 
 .login-form label {
@@ -232,7 +279,7 @@ video {
 }
 
 .login-form input {
-    padding: 8px;
+    padding: 50px;
     margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
@@ -265,13 +312,51 @@ video {
     border-radius: 5px;
 } */
 
+.map-container {
+    text-align: center;
+    margin-top: 40px;
+}
+/* Style for person sections */
+.person-section {
+    margin-top: 40px;
+    margin-left: 60px;
+    margin-right: 60px;
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: #dd6e42;
+}
+
+.person-section h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.person-description {
+    font-size: 20px;
+}
+
+/* Additional styles for specific persons */
+.person1-description {
+    color: #333;
+}
+
+.person2-description {
+    color: #333;
+}
+
+.person3-description {
+    color: #333;
+}
+
+
 footer {
     width: 100%;
     background-color: #97CADB;
     padding: 0 10px;
     text-align: center;
     font-family: "Arial", sans-serif;
-    margin-top: 500px;
+    margin-top: 100px;
 }
 
 .about-me, .contact-info {
