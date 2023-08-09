@@ -5,20 +5,20 @@ from flask_login import LoginManager, UserMixin, login_user, login_required, log
 import os
 
 app = Flask(__name__)
-app.secret_key = 'Moose_Angel24'  # Replace with a secure secret key
+app.secret_key = 'Moose_Angel24'  
 
 login_manager = LoginManager(app)
 login_manager.login_view = 'login'
-
 
 
 class User(UserMixin):
     def __init__(self, id):
         self.id = id
 
+
 users = {
-    'user1': {'celestelomeli': 'Mellifluous24!'}, 
-    'user2': {'ajramirez': 'moosebaby04'}
+    'celestelomeli': {'password': 'Mellifluous24!'}, 
+    'ajramirez': {'password': 'moosebaby04'}
     }
 
 login_manager = LoginManager(app)
@@ -57,6 +57,7 @@ def logout():
     return redirect('/')
 
 @app.route('/')
+@login_required
 def index():
     return render_template('index.html')
 
