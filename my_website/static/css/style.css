@@ -11,7 +11,7 @@ body {
 }
 
 header { 
-    
+   
     display: flex;
     background-color: #287094;
     color: #ECE9E9;
@@ -190,7 +190,7 @@ main h3 {
 
 .slideshow-container {
     position: relative;
-    max-width: 1000px;
+    max-width: auto;
     margin: auto;
     height: 500px;
 }
