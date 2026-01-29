@@ -1,6 +1,5 @@
 <!-- templates/login.html -->
-<!-- LOGIN PAGE: Standalone page (doesn't extend base.html) for user authentication -->
-<!-- Includes show/hide password toggle functionality -->
+<!-- LOGIN PAGE: Standalone page for user authentication -->
 
 <!DOCTYPE html>
 <html>
@@ -33,7 +32,7 @@
                 <button type="submit">Log In</button>
             </form>
             
-            <!-- FLASH MESSAGES: Display error messages (e.g., "Invalid credentials") -->
+            <!-- FLASH MESSAGES: Display error messages  -->
             <!-- Flask's flash() function sends messages that appear here -->
             {% with messages = get_flashed_messages() %}
                 {% if messages %}

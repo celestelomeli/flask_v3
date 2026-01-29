@@ -7,7 +7,7 @@
 <!-- Set the page title that appears in browser tab -->
 {% block title %}Meet Moose{% endblock %}
 
-<!-- Main content that gets inserted into base.html's {% block main_content %} -->
+<!-- Main content that gets inserted into base.html's main_content block -->
 {% block main_content %}
     <!-- HERO SECTION: Large banner with gradient background -->
     <div class="hero-section">
@@ -18,36 +18,41 @@
         </div>
     </div>
 
-    <!-- QUICK STATS: 4 cards showing key facts about Moose -->
-    <div class="quick-stats">
-        <div class="stat-card stat-card-1">
-            <h3>Favorite Toy</h3>
-            <p>Squeaker toys & balls</p>
+    <!-- PHOTO AND STATS SECTION: Photo surrounded by stat cards -->
+    <div class="photo-stats-container">
+        <!-- Left column: 2 stat cards -->
+        <div class="stats-column">
+            <div class="stat-card">
+                <h3>Favorite Toy</h3>
+                <p>Squeaker toys & balls</p>
+            </div>
+            <div class="stat-card">
+                <h3>Lives For</h3>
+                <p>Daily walks</p>
+            </div>
         </div>
-        <div class="stat-card stat-card-2">
-            <h3>Lives For</h3>
-            <p>Daily walks</p>
-        </div>
-        <div class="stat-card stat-card-3">
-            <h3>Special Talent</h3>
-            <p>Vocal expressions</p>
-        </div>
-        <div class="stat-card stat-card-4">
-            <h3>Quirk</h3>
-            <p>Thinks he's a lap dog (he's 80 lbs)</p>
-        </div>
-    </div>
 
-    <!-- FEATURED PHOTO: Main image of Moose -->
-    <!-- url_for() generates the correct path to the static file -->
-    <div class="featured-photo">
-        <img src="{{ url_for('static', filename='photos/featured.jpg') }}" alt="Moose">
+        <!-- Center: Featured photo -->
+        <div class="featured-photo">
+            <img src="{{ url_for('static', filename='photos/featured.jpg') }}" alt="Moose">
+        </div>
+
+        <!-- Right column: 2 stat cards -->
+        <div class="stats-column">
+            <div class="stat-card">
+                <h3>Special Talent</h3>
+                <p>Vocal expressions</p>
+            </div>
+            <div class="stat-card">
+                <h3>Quirk</h3>
+                <p>Thinks he's a lap dog (he's 80 lbs)</p>
+            </div>
+        </div>
     </div>
 
     <!-- ABOUT SECTION: Detailed description of Moose's personality -->
     <div class="about-section">
         <h2>About Moose</h2>
-        <p>Moose is a Labrador Retriever with the perfect mix of chill vibes and endless energy. Whether he's napping in a sunbeam or sprinting after a ball, he's always 100% himself. Goofy, vocal, and affectionate. He thinks he's a lap dog and will sit on you with zero awareness of his 80-pound body or where exactly he's sitting. Your face? Your stomach? Doesn't matter to him.</p>
+        <p>Moose is a chocolate Labrador Retriever with the perfect mix of chill vibes and endless energy. Whether he's napping in a sunbeam or sprinting after a ball, he's always 100% himself. Goofy, vocal, and affectionate. He thinks he's a lap dog and will sit on you with zero awareness of his 80-pound body or where exactly he's sitting. Your face? Your stomach? Doesn't matter to him.</p>
     </div>
 {% endblock %}
-

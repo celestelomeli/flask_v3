@@ -126,6 +126,9 @@ def gallery():
 
 # Run the Flask application
 if __name__ == '__main__':
+    # Disable template caching for development
+    app.config['TEMPLATES_AUTO_RELOAD'] = True
+    app.jinja_env.auto_reload = True
     # debug=True enables auto-reload when code changes and shows detailed error pages
     # Only use debug=True in development, never in production
     app.run(debug=True)
