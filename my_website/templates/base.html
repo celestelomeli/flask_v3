@@ -1,66 +1,61 @@
 <!-- templates/base.html -->
+<!-- BASE TEMPLATE: This is the master template that all other pages inherit from -->
+<!-- It contains the common elements: header, navigation, and footer -->
 
 <!DOCTYPE html>
 <html>
     <head>
+        <!-- Dynamic page title - each page sets its own title using {% block title %} -->
         <title>{% block title %}{% endblock %} </title>
+        
+        <!-- Link to external CSS stylesheet using Flask's url_for() function -->
+        <!-- url_for('static', filename='...') generates the correct path to static files -->
         <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+        
+        <!-- Import Baloo 2 font from Google Fonts for the site title -->
+        <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@700&display=swap" rel="stylesheet">
     </head>
     <body>
-        <header>
-            <div class="logo">
-                <img src="{{ url_for('static', filename='photos/labrador_retriever.png') }}" alt="Labrador Logo">
+        <!-- Page wrapper helps with flexbox layout for sticky footer -->
+        <div class="page-wrapper">
+            <!-- HEADER: Contains logo and site title -->
+            <header>
+                <div class="logo">
+                    <!-- Paw print emoji in a circular white background -->
+                    <span class="paw-icon">🐾</span>
                 </div>
-            <h1>Who's Moose</h1>
-         </header>
+                <h1>Moose on the Loose</h1>
+            </header>
 
-        <nav>
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/about_our_family">About Our Family</a></li>
-                <li><a href="/meet_our_dog">Meet Our Dog</a></li>
-                <li><a href="/gallery">Gallery</a></li>
-                {% if current_user.is_authenticated %}
-                    <li><a href="/dashboard">Dashboard</a></li>
-                    <li><a href="/logout">Logout</a></li>
-                {% else %}
-                    <li><a href="/login">Login</a></li>
-                {% endif %}
-            </ul>
-        </nav>
+            <!-- NAVIGATION: Main menu links -->
+            <nav>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/adventures">Adventures</a></li>
+                    <li><a href="/gallery">Gallery</a></li>
+                    <li><a href="/favorites">Favorites</a></li>
+                    
+                    <!-- Conditional navigation: Show Logout if user is logged in, Login if not -->
+                    <!-- current_user comes from Flask-Login extension -->
+                    {% if current_user.is_authenticated %}
+                        <li><a href="/logout">Logout</a></li>
+                    {% else %}
+                        <li><a href="/login">Login</a></li>
+                    {% endif %}
+                </ul>
+            </nav>
 
-      <!--  <main class="center-aligned">
-            {% block content %}{%endblock %}
-        </main> -->
+            <!-- MAIN CONTENT BLOCK: Child templates inject their content here -->
+            {% block main_content %}
+            {% endblock %}
 
-        {% block main_content %}
-            <main class="center-aligned">
-                {% block main_section_1 %}{% endblock %}
-            </main>
-
-            {% block fun_facts %}{% endblock %}
-            {% block map %}{% endblock %}
-            {% block main_section_2 %}{% endblock %}
-        {% endblock %}
-
-
-
-        <footer>
-            <div class="about-me">
-                <h2>About Me</h2>
-                <p>
-                Hello, I'm Celeste Lomeli. I created this website to
-                showcase as a personal project and share our 
-                experiences with our dog Moose. Feel free to reach 
-                out to me if you have any questions or feedback! </p>
-            </div>
-
-            <div class="contact-info">
-                <h2>Contact Information</h2>
-                <p>
-                Email: celesteelomeli@gmail.com
-                </p>
-            </div>
-        </footer>
-</body>
+            <!-- FOOTER: Contact information -->
+            <footer>
+                <div class="footer-content">
+                    <p>A personal project by Celeste Lomeli</p>
+                    <p>celesteelomeli@gmail.com</p>
+                </div>
+            </footer>
+        </div>
+    </body>
 </html>

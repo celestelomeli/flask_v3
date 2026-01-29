@@ -1,20 +1,40 @@
+<!-- templates/login.html -->
+<!-- LOGIN PAGE: Standalone page (doesn't extend base.html) for user authentication -->
+<!-- Includes show/hide password toggle functionality -->
+
 <!DOCTYPE html>
 <html>
 <head>
     <title>Login</title>
+    <!-- Link to main stylesheet -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
-    <div class="login-center-aligned"> <!-- Center the login container -->
+    <!-- Center the login form on the page -->
+    <div class="login-center-aligned">
         <div class="login-container">
             <h2 class="login-title">Login</h2>
+            
+            <!-- LOGIN FORM: Submits username and password to /login route via POST -->
             <form method="POST" action="/login">
+                <!-- Username input field -->
                 <label for="username">Username:</label>
                 <input type="text" id="username" name="username" required><br>
+                
+                <!-- Password input field with show/hide toggle button -->
                 <label for="password">Password:</label>
-                <input type="password" id="password" name="password" required><br>
+                <div class="password-wrapper">
+                    <input type="password" id="password" name="password" required>
+                    <!-- Toggle button calls JavaScript function to show/hide password -->
+                    <button type="button" class="toggle-password" onclick="togglePassword()">Show</button>
+                </div>
+                
+                <!-- Submit button -->
                 <button type="submit">Log In</button>
             </form>
+            
+            <!-- FLASH MESSAGES: Display error messages (e.g., "Invalid credentials") -->
+            <!-- Flask's flash() function sends messages that appear here -->
             {% with messages = get_flashed_messages() %}
                 {% if messages %}
                 <ul class="flash-messages">
@@ -24,5 +44,24 @@
                 </ul>
             {% endif %}
         {% endwith %}
+        </div>
+    </div>
+    
+    <!-- JAVASCRIPT: Toggle password visibility -->
+    <script>
+        function togglePassword() {
+            const passwordInput = document.getElementById('password');
+            const toggleBtn = document.querySelector('.toggle-password');
+            
+            // If password is hidden, show it; if shown, hide it
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';  // Show password
+                toggleBtn.textContent = 'Hide';
+            } else {
+                passwordInput.type = 'password';  // Hide password
+                toggleBtn.textContent = 'Show';
+            }
+        }
+    </script>
 </body>
 </html>

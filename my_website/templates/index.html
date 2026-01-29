@@ -1,54 +1,53 @@
 <!-- templates/index.html -->
+<!-- HOME PAGE: Main landing page with hero section, quick stats, featured photo, and about section -->
 
+<!-- Inherit from base.html to get header, nav, and footer -->
 {% extends 'base.html' %}
 
-{% block title %}Home{% endblock %}
+<!-- Set the page title that appears in browser tab -->
+{% block title %}Meet Moose{% endblock %}
 
-{% block main_section_1 %}
-    <h1>All about Labs</h1>
-    <h3>Labrador Retrievers are wonderful companions known for their loyalty, gentle nature, and affection. They blend seamlessly into families and offer endless joy with their playful demeanor. Their intelligence and trainability make them versatile working dogs, while their infectious happiness brings boundless joy to their owners' lives, making them cherished family members and loyal friends.</h3>
-
-{% endblock %}
-
-{% block fun_facts %}
-    <div id="fun-facts-container">
-        <h2>Fun Facts</h2>
-            <ul id="fun-facts-list">
-                <li>Enthusiastic Eaters: 
-                    Labradors are known for their love of food and tendency to eat just about anything they can get their paws on. This makes them prone to obesity if their diet and exercise aren't carefully managed.</li>
-                <li>Webbed Toes: 
-                    Labradors have a natural affinity for water and are exceptional swimmers. They have webbed feet, which enhance their swimming abilities. This unique feature allows them to paddle efficiently in the water.</li>
-                <li>Soft Mouth:
-                    Labradors have a natural affinity for water and are exceptional swimmers. </li>
-                <li>Intuitive:
-                    Labradors have a keen sense of intuition and can often pick up on their owner's emotions. They are known for being empathetic and providing comfort when needed.</li>
-                <li>Excellent Sniffers: 
-                    Labradors have an incredible sense of smell, which makes them highly skilled in various scent-related activities, such as detection work, search and rescue missions, and tracking.</li>
-                <li>Record Holder: 
-                    The Labrador Retriever holds the title of being the most popular dog breed in the United States, according to the American Kennel Club (AKC) registration statistics.</li>
-            </ul>
+<!-- Main content that gets inserted into base.html's {% block main_content %} -->
+{% block main_content %}
+    <!-- HERO SECTION: Large banner with gradient background -->
+    <div class="hero-section">
+        <div class="hero-content">
+            <h1 class="hero-title">Meet Moose</h1>
+            <p class="hero-subtitle">Adventure buddy • Food enthusiast • Professional napper</p>
+            <p class="hero-description">Chill but energetic, goofy, and always ready for the next walk. That's Moose.</p>
+        </div>
     </div>
 
-    <div id="breed-information-container">
-        <h2>Breed Information</h2>
-        <ul id="breed-information-list">
-            <li>Weight: 
-                Males weigh between 65-80lbs, and females weigh less at 55-70lbs.</li>
-            <li>Height: 
-                Males measure 22.5-24.5 and females measure 21.5-23.5 inches.</li>
-            <li>Lifespan: 
-                On average, labs live around 10-12 years.</li>
-            <li>Temperament: 
-                Labs are generally good-natured, affectionate, and get along well with children, other pets, and strangers.</li>
-            <li>Training: 
-                Labrador Retrievers are highly trainable due to their intelligence and eagerness to please their owners. Early socialization and obedience training are essential to ensure they grow up to be well-behaved and well-adjusted dogs.</li>
-            <li>Grooming:
-                Labs have a short double coat that sheds moderately throughout the year and more heavily during seasonal changes.</li>
-            <li>Care:
-                Labrador Retrievers are a highly energetic and active breed, making regular physical activity a crucial part of their care routine. Daily exercise is essential to prevent behavior problems that may arise from boredom.</li>
-            <li>Adaptability:
-                Labs are best suited for homes with active families who can provide them with plenty of space for exercise and attention.</li>
-        </ul>
+    <!-- QUICK STATS: 4 cards showing key facts about Moose -->
+    <div class="quick-stats">
+        <div class="stat-card stat-card-1">
+            <h3>Favorite Toy</h3>
+            <p>Squeaker toys & balls</p>
+        </div>
+        <div class="stat-card stat-card-2">
+            <h3>Lives For</h3>
+            <p>Daily walks</p>
+        </div>
+        <div class="stat-card stat-card-3">
+            <h3>Special Talent</h3>
+            <p>Vocal expressions</p>
+        </div>
+        <div class="stat-card stat-card-4">
+            <h3>Quirk</h3>
+            <p>Thinks he's a lap dog (he's 80 lbs)</p>
+        </div>
+    </div>
+
+    <!-- FEATURED PHOTO: Main image of Moose -->
+    <!-- url_for() generates the correct path to the static file -->
+    <div class="featured-photo">
+        <img src="{{ url_for('static', filename='photos/featured.jpg') }}" alt="Moose">
+    </div>
+
+    <!-- ABOUT SECTION: Detailed description of Moose's personality -->
+    <div class="about-section">
+        <h2>About Moose</h2>
+        <p>Moose is a Labrador Retriever with the perfect mix of chill vibes and endless energy. Whether he's napping in a sunbeam or sprinting after a ball, he's always 100% himself. Goofy, vocal, and affectionate. He thinks he's a lap dog and will sit on you with zero awareness of his 80-pound body or where exactly he's sitting. Your face? Your stomach? Doesn't matter to him.</p>
     </div>
 {% endblock %}
 

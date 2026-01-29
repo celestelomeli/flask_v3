@@ -1,200 +1,499 @@
 /* static/css/style.css */
+/* Main stylesheet for Moose on the Loose website */
 
-body, h1, h2, h3, h4, h5, h6, p, ul, li {
+/* GLOBAL RESET - removes default browser spacing */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;  /* Makes width/height include padding and border */
 }
 
+/* BODY - sets up flexbox layout so footer sticks to bottom */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #023246;
-}
-
-header { 
-   
-    display: flex;
-    background-color: #287094;
-    color: #ECE9E9;
-    align-items: left;
-    padding: 20px;
-}
-
-.logo img {
-    width: 40px; /* Set the width of your logo image (adjust as needed) */
-    height: auto; /* Automatically adjust the height to maintain the aspect ratio */
-  }
-
-  .logo {
-    display: flex; /* Optional: Use flexbox for better alignment */
-    align-items: center; /* Optional: Vertically center the items */
-    margin-bottom: 10px; /* Adjust the margin as needed */
-}
-
-.logo img {
-    margin-right: 10px; /* Adjust the margin as needed */
-}
-
-h1 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f7fa;  /* Light gray background */
+    color: #2c3e50;  /* Dark gray text */
+    line-height: 1.6;  /* Spacing between lines of text */
     margin: 0;
+    padding: 0;
+    min-height: 100vh;  /* At least full viewport height */
+    display: flex;  /* Flexbox for sticky footer */
+    flex-direction: column;  /* Stack items vertically */
 }
 
+/* PAGE WRAPPER - helps with sticky footer layout */
+.page-wrapper {
+    flex: 1;  /* Takes up remaining space, pushing footer down */
+    display: flex;
+    flex-direction: column;
+}
+
+/* HEADER - top bar with logo and site title */
+header { 
+    display: flex;  /* Flexbox to align logo and title horizontally */
+    align-items: center;  /* Vertically center items */
+    background-color: #2c3e50;  /* Dark blue-gray */
+    color: #ecf0f1;  /* Off-white text */
+    padding: 1.5rem 2rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);  /* Subtle shadow */
+}
+
+/* LOGO - paw print icon container */
+.logo {
+    display: flex;
+    align-items: center;
+    margin-right: 1rem;
+}
+
+/* PAW ICON - circular white background with paw emoji */
+.paw-icon {
+    font-size: 2rem;
+    background-color: white;
+    border-radius: 50%;  /* Makes it circular */
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;  /* Centers emoji in circle */
+}
+
+/* SITE TITLE - uses playful Baloo 2 font */
+header h1 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    font-family: 'Baloo 2', cursive;  /* Imported from Google Fonts */
+    letter-spacing: 0.5px;
+}
+
+/* Navigation */
 nav {
-    background-color: #97CADB;
-    padding: 10px 0;
+    background-color: #34495e;
+    padding: 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
-
 
 nav ul {
     list-style: none;
-    text-align: left;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 nav li {
-    display: inline-block;
-    margin: 0 10px
+    margin: 0;
 }
 
 nav a {
-    color: #333;
+    display: block;
+    color: #ecf0f1;
     text-decoration: none;
-    padding: 8px 16px;
-    font-weight: bold;
-    font-size: 18px;
+    padding: 1rem 1.5rem;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
 }
 
 nav a:hover {
-    background-color: #F0F6F7;
+    background-color: #2c3e50;
 }
 
+/* Main Content */
 main {
-    padding: 40px; /* Add padding around the main content */
-    background-color: #CECEE1; /* Set a background color for the main content */
-    margin-left: 150px; /* Align main content slightly to the right */
-    margin-right: 150px;
-    margin-top: 100px;
+    max-width: 1200px;
+    margin: 3rem auto;
+    padding: 2rem;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
-main h3 {
-    margin-top: 20px; /* Add desired space between h1 and h2 */
-  }
-
-  .center-aligned {
+main h1 {
+    font-size: 2.5rem;
+    color: #2c3e50;
+    margin-bottom: 1rem;
     text-align: center;
+}
+
+.intro-text {
+    font-size: 1.2rem;
+    color: #7f8c8d;
+    text-align: center;
+    margin-bottom: 3rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.center-aligned {
+    text-align: center;
+}
+
+/* Info Grid - Modern Card Layout */
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 2rem auto;
+    max-width: 1200px;
+    padding: 0 2rem;
+}
+
+.info-card {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.info-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.info-card h2 {
+    color: #3498db;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 0.5rem;
+}
+
+.info-card ul {
+    list-style: none;
+}
+
+.info-card li {
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
     position: relative;
 }
 
+.info-card li:before {
+    content: "•";
+    color: #3498db;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+
+.info-card strong {
+    color: #2c3e50;
+}
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(135deg, #6b8e9f 0%, #4a7c8f 100%);
+    color: white;
+    padding: 4rem 2rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    border-radius: 8px;
+}
+
+.hero-title {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.hero-subtitle {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    opacity: 0.9;
+}
+
+.hero-description {
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto;
+    opacity: 0.85;
+}
+
+/* Quick Stats Cards */
+.quick-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.stat-card {
+    background-color: #ecf0f1;
+    padding: 1.5rem;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.stat-card-1 {
+}
+
+.stat-card-2 {
+}
+
+.stat-card-3 {
+}
+
+.stat-card-4 {
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+}
+
+.stat-card h3 {
+    color: #2c3e50;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.stat-card p {
+    color: #7f8c8d;
+    font-size: 0.95rem;
+}
+
+/* Content Pages */
+.content-page {
+    max-width: 1200px;
+    margin: 3rem auto;
+    padding: 2rem;
+}
+
+.content-page h1 {
+    font-size: 2.5rem;
+    color: #2c3e50;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.about-intro {
+    max-width: 800px;
+    margin: 0 auto 3rem;
+    text-align: center;
+    font-size: 1.2rem;
+    color: #7f8c8d;
+    line-height: 1.8;
+}
+
+/* FAVORITES GRID - colorful scrapbook-style cards */
+.favorites-grid {
+    display: flex;
+    flex-wrap: wrap;  /* Cards wrap to next line if needed */
+    gap: 2rem;
+    margin: 2rem auto;
+    max-width: 900px;
+    padding: 2rem;
+    justify-content: center;  /* Centers cards in each row */
+}
+
+/* FAVORITE CARD - white cards with colorful borders and slight rotation */
+.favorite-card {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease;  /* Smooth animation on hover */
+    border: 3px solid;  /* Border color set by nth-child below */
+    width: 250px;
+}
+
+/* Each card gets a different color border and slight rotation for scrapbook effect */
+.favorite-card:nth-child(1) { 
+    border-color: #e74c3c;  /* Red */
+    transform: rotate(-1deg);  /* Slight counter-clockwise tilt */
+}
+.favorite-card:nth-child(2) { 
+    border-color: #3498db;  /* Blue */
+    transform: rotate(2deg);  /* Slight clockwise tilt */
+}
+.favorite-card:nth-child(3) { 
+    border-color: #2ecc71;  /* Green */
+    transform: rotate(-2deg);
+}
+.favorite-card:nth-child(4) { 
+    border-color: #f39c12;  /* Orange */
+    transform: rotate(1deg);
+}
+.favorite-card:nth-child(5) { 
+    border-color: #9b59b6;  /* Purple */
+    transform: rotate(-1.5deg);
+}
+.favorite-card:nth-child(6) { 
+    border-color: #1abc9c;  /* Teal */
+    transform: rotate(1.5deg);
+}
+
+/* On hover, straighten card and make it slightly bigger */
+.favorite-card:hover {
+    transform: rotate(0deg) scale(1.05);  /* Straighten and enlarge */
+    z-index: 10;  /* Bring to front */
+}
+
+.favorite-card h3 {
+    color: #2c3e50;
+}
+
+.favorite-card p {
+    color: #7f8c8d;
+}
+
+.favorite-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.favorite-card h3 {
+    color: #2c3e50;
+    margin-bottom: 0.75rem;
+    font-size: 1.3rem;
+}
+
+.favorite-card p {
+    color: #7f8c8d;
+    line-height: 1.6;
+}
+
+/* ADVENTURES GRID - sticky note/bulletin board style */
+.adventures-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin: 2rem auto;
+    max-width: 1000px;
+    justify-content: center;
+}
+
+/* ADVENTURE CARD - yellow sticky note appearance with rotation */
+.adventure-card {
+    background-color: #fef9e7;  /* Light yellow like sticky notes */
+    padding: 1.5rem;
+    border-radius: 4px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease;
+    width: 200px;
+    position: relative;
+}
+
+/* Each card gets a unique rotation for bulletin board effect */
+/* Using nth-child to target each card individually */
+.adventure-card:nth-child(1) { transform: rotate(-2deg); }
+.adventure-card:nth-child(2) { transform: rotate(1deg); }
+.adventure-card:nth-child(3) { transform: rotate(-1deg); }
+.adventure-card:nth-child(4) { transform: rotate(2deg); }
+.adventure-card:nth-child(5) { transform: rotate(-1.5deg); }
+.adventure-card:nth-child(6) { transform: rotate(1.5deg); }
+.adventure-card:nth-child(7) { transform: rotate(-2deg); }
+.adventure-card:nth-child(8) { transform: rotate(1deg); }
+.adventure-card:nth-child(9) { transform: rotate(-1deg); }
+.adventure-card:nth-child(10) { transform: rotate(2deg); }
+.adventure-card:nth-child(11) { transform: rotate(-1.5deg); }
+.adventure-card:nth-child(12) { transform: rotate(1deg); }
+
+/* On hover, straighten and enlarge the card */
+.adventure-card:hover {
+    transform: rotate(0deg) scale(1.05);
+    z-index: 10;  /* Bring to front so it overlaps others */
+}
+
+.adventure-card h3 {
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.adventure-card p {
+    color: #7f8c8d;
+    font-size: 0.95rem;
+}
+
+/* Home CTA Section */
+.featured-photo {
+    max-width: 400px;
+    margin: 3rem auto;
+    text-align: center;
+}
+
+.featured-photo img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.about-section {
+    max-width: 800px;
+    margin: 3rem auto;
+    padding: 2rem;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.about-section h2 {
+    color: #2c3e50;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+}
+
+.about-section p {
+    color: #7f8c8d;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+/* Dashboard */
 .dashboard-container {
-    background-color: #f0f0f0;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-    margin-top: 30px;
+    background-color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    margin: 2rem auto;
+    max-width: 800px;
 }
 
 .dashboard-container h2 {
-    margin-bottom: 10px; /* Add margin below h2 */
+    color: #2c3e50;
+    margin-bottom: 1rem;
 }
 
 .dashboard-container p {
-    margin-top: 10px; /* Add margin above p */
+    color: #7f8c8d;
 }
 
+/* Website Info */
 .website-info-container {
-    background-color: #dd6e42;
-    padding: 50px;
-    border-radius: 5px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-    margin-top: 60px;
-    margin-left: 50px;
-    margin-right: 50px;
-    border: 2px solid #dd6e42; /* Outer border color and thickness */
-    border-radius: 10px; /* Border radius for rounded corners */
-    outline: 2px solid #dd6e42; /* Inner border color and thickness */
-    outline-offset: -5px; /* Adjust the inner border offset to match the outer border thickness */
+    background-color: #3498db;
+    color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    margin: 2rem auto;
+    max-width: 800px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
 .website-info-container h2 {
-    margin-bottom: 15px;
+    margin-bottom: 1rem;
 }
 
 .website-info-container p {
-    margin-bottom: 15px;
-    font-size: 20px;
+    font-size: 1.1rem;
+    line-height: 1.8;
 }
 
-#fun-facts-container {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #dd6e42;
-    padding: 80px;
-    border-radius: 5px;
-    /*box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);*/
-    width: 470px;
-    margin-left: 110px;
-    margin-top: 30px;
-    height: 560px;
-    /*text-align: center;*/
-}
-
-#fun-facts h2 {
-    color: blue;
-    margin-bottom: 20px; 
-}
-
-#fun-facts-list {
-    list-style-type: square;
-    margin-left: 50px;
-    margin-top: 30px;
-}
-
-#fun-facts-list li {
-    margin-left: 0px;
-    margin-bottom: 20px;
-    word-wrap: break-word;
-}
-
-#breed-information-container {
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #dd6e42;
-    padding: 60px;
-    border-radius: 5px;
-    /*box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);*/
-    float: right;
-    width: 500px; /* Adjust the width as needed */
-    margin-left: 755px; /* Adjust the margin as needed */
-    margin-top: -720px; /* Adjust the margin as needed */
-      
-}
-
-#breed-information h2 {
-    color: blue;
-    margin-bottom: 20px; 
-}
-
-#breed-information-list {
-    list-style-type: square;
-    margin-left: 50px;
-    margin-top: 30px;
-}
-
-#breed-information-list li {
-    margin-left: 0px;
-    margin-bottom: 20px;
-    word-wrap: break-word;
-}
-
+/* Slideshow */
 .slideshow-container {
     position: relative;
-    max-width: auto;
-    margin: auto;
+    max-width: 800px;
+    margin: 2rem auto;
     height: 500px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
-
 
 .slide {
     display: none;
@@ -203,13 +502,12 @@ main h3 {
     left: 0;
     right: 0;
     bottom: 0;
-    margin: auto; /* Center the .slide element */
 }
 
 .slide img {
     width: 100%;
-    height: auto;
-    object-fit: contain;
+    height: 100%;
+    object-fit: cover;
 }
 
 .prev, .next {
@@ -217,8 +515,16 @@ main h3 {
     top: 50%;
     transform: translateY(-50%);
     cursor: pointer;
-    font-size: 24px;
-    padding: 10px;
+    font-size: 2rem;
+    padding: 1rem;
+    background-color: rgba(0,0,0,0.5);
+    color: white;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
 }
 
 .prev {
@@ -229,142 +535,215 @@ main h3 {
     right: 0;
 }
 
+/* Video */
 .video-container {
-    position: relative;
-    max-width: 800px; /* Adjust the maximum width as needed */
-    margin: 0 auto; /* Center the video horizontally */
+    max-width: 800px;
+    margin: 2rem auto;
 }
 
-/* Style for the video element */
 video {
-    width: 100%; /* Make the video element take the full width of its container */
-    height: auto; /* Maintain the video's aspect ratio */
-    display: block;
-    border-radius: 10px; /* Add rounded corners */
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
-    
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
-/* Add styles specific to the login page */
-.login-container {
-    max-width: 1000px;
-    margin: auto;
-    padding: 150px;
-    background-color: #fff;
-    border-radius: 5px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-
-}
-
+/* Login Page */
 .login-center-aligned {
     display: flex;
-    justify-content: center; /* Horizontally center the content */
-    align-items: center; /* Vertically center the content */
-    min-height: 100vh; /* Ensure the content takes up at least the viewport height */
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f5f7fa;
+}
+
+.login-container {
+    max-width: 400px;
+    width: 100%;
+    padding: 2rem;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
 .login-title {
-    font-size: 30px;
-    margin-bottom: 20px;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    color: #2c3e50;
 }
 
-.login-form {
+.login-container form {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
 }
 
-.login-form label {
-    margin-bottom: 5px;
-    font-weight: bold;
+.login-container label {
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: #2c3e50;
 }
 
-.login-form input {
-    padding: 50px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
+.login-container input {
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
     border-radius: 4px;
+    font-size: 1rem;
+    color: #2c3e50;
+    width: 100%;
 }
 
-.login-form button {
-    background-color: #007bff;
-    color: #fff;
+.password-wrapper {
+    position: relative;
+    margin-bottom: 1rem;
+}
+
+.password-wrapper input {
+    margin-bottom: 0;
+    padding-right: 70px;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: transparent;
     border: none;
-    padding: 10px 20px;
+    color: #3498db;
+    cursor: pointer;
+    font-size: 0.9rem;
+    padding: 0.5rem;
+}
+
+.toggle-password:hover {
+    color: #2980b9;
+    background-color: transparent;
+}
+
+.login-container input:focus {
+    outline: none;
+    border-color: #3498db;
+}
+
+.login-container button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 0.75rem;
     border-radius: 4px;
     cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
 }
 
-.login-form button:hover {
-    background-color: #0056b3;
+.login-container button:hover {
+    background-color: #2980b9;
 }
 
-/* Other styles can be added as needed */
-
- /* .gallery { 
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    grid-gap: 50px;
+.flash-messages {
+    list-style: none;
+    padding: 0;
+    margin-top: 1rem;
 }
 
-.gallery img {
-    width: 100%;
-    height: auto;
-    border-radius: 5px;
-} */
+.flash-messages li {
+    padding: 0.75rem;
+    background-color: #e74c3c;
+    color: white;
+    border-radius: 4px;
+    margin-bottom: 0.5rem;
+}
 
+/* Map */
 .map-container {
     text-align: center;
-    margin-top: 40px;
+    margin: 2rem auto;
+    max-width: 800px;
 }
-/* Style for person sections */
+
+/* Person Sections */
 .person-section {
-    margin-top: 40px;
-    margin-left: 60px;
-    margin-right: 60px;
-    border: 1px solid #ccc;
-    padding: 20px;
-    border-radius: 5px;
-    background-color: #dd6e42;
+    margin: 2rem auto;
+    max-width: 800px;
+    padding: 2rem;
+    border-radius: 8px;
+    background-color: white;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
 .person-section h2 {
-    font-size: 24px;
-    margin-bottom: 10px;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #2c3e50;
 }
 
 .person-description {
-    font-size: 20px;
+    font-size: 1.1rem;
+    color: #7f8c8d;
+    line-height: 1.8;
 }
 
-/* Additional styles for specific persons */
-.person1-description {
-    color: #333;
-}
-
-.person2-description {
-    color: #333;
-}
-
-.person3-description {
-    color: #333;
-}
-
-
+/* Footer */
 footer {
-    width: 100%;
-    background-color: #97CADB;
-    padding: 0 10px;
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    padding: 2rem;
     text-align: center;
-    font-family: "Arial", sans-serif;
-    margin-top: 100px;
+    margin-top: auto;
 }
 
-.about-me, .contact-info {
-    margin-top: 0 10px;
-    margin-bottom: 0 20px;
-    color: #333;
-    white-space: pre-line;
-
+.footer-content p {
+    margin: 0.5rem 0;
+    color: #bdc3c7;
 }
 
+/* Gallery */
+.gallery-intro {
+    text-align: center;
+    color: #7f8c8d;
+    font-size: 1.1rem;
+    margin-bottom: 3rem;
+}
 
+.photo-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin: 2rem auto;
+    max-width: 1200px;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.photo-item {
+    background-color: white;
+    padding: 1rem;
+    border-radius: 4px;
+    overflow: visible;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease, z-index 0.3s ease;
+    width: 300px;
+}
+
+.photo-item:nth-child(1) { transform: rotate(-3deg); }
+.photo-item:nth-child(2) { transform: rotate(2deg); }
+.photo-item:nth-child(3) { transform: rotate(-1deg); }
+.photo-item:nth-child(4) { transform: rotate(3deg); }
+.photo-item:nth-child(5) { transform: rotate(-2deg); }
+.photo-item:nth-child(6) { transform: rotate(1deg); }
+.photo-item:nth-child(7) { transform: rotate(-2deg); }
+
+.photo-item:hover {
+    transform: rotate(0deg) scale(1.1);
+    z-index: 10;
+}
+
+.photo-item img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    display: block;
+}

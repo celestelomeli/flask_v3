@@ -1,61 +1,52 @@
 <!-- templates/gallery.html -->
+<!-- GALLERY PAGE: Protected page showing photos and video of Moose -->
+<!-- Requires login to access (protected by @login_required decorator in app.py) -->
 
 {% extends 'base.html' %}
 
 {% block title %}Gallery{% endblock %}
 
+{% block main_content %}
+    <main class="content-page">
+        <h1>Moose's Gallery</h1>
+        <p class="gallery-intro">A collection of Moose's best moments</p>
+        
+        <!-- VIDEO SECTION: Featured video of Moose -->
+        <div class="video-container">
+            <video controls>
+                <!-- url_for() generates path to video file in static folder -->
+                <source src="{{ url_for('static', filename='video/Moose.mp4') }}" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
 
-{% block main_section_1 %}
-    <h1>Memories</h1>
-    <h3>Welcome to our webpage, where we present a delightful assortment of funny, serious, and heartwarming pictures of our dog over the years. From playful puppy moments that evoke laughter to serene snapshots reflecting profound companionship, this collection captures the diverse range of emotions our furry friend has brought into our lives. Join us on this visual journey as we celebrate the cherished memories and unforgettable experiences shared with our beloved canine companion.</h3>
-    <!--div class="gallery">
-        {% for photo in photos %}
-            <img src="{{ url_for('static', filename='photos/' + photo) }}" alt="{{ photo }}">
-        {% endfor %}
-    </div> -->
-    <div class="slideshow-container">
-        <img class="slide" src="{{ url_for('static', filename='photos/photo1.jpg') }}" alt="Photo 1"
-        width="500" height="500">
-        <img class="slide" src="{{ url_for('static', filename='photos/photo2.jpg') }}" alt="Photo 2"
-        width="500" height="500">
-        <img class="slide" src="{{ url_for('static', filename='photos/photo3.jpg') }}" alt="Photo 3"
-        width="500" height="500">
-        <img class="slide" src="{{ url_for('static', filename='photos/photo4.jpeg') }}" alt="Photo 3"
-        width="500" height="500">
-        <img class="slide" src="{{ url_for('static', filename='photos/photo5.jpg') }}" alt="Photo 3"
-        width="500" height="500">
-        <img class="slide" src="{{ url_for('static', filename='photos/photo6.jpg') }}" alt="Photo 3"
-        width="500" height="500">
-        <img class="slide" src="{{ url_for('static', filename='photos/photo7.jpg') }}" alt="Photo 3"
-        width="500" height="500">
-        <img class="slide" src="{{ url_for('static', filename='photos/photo8.jpg') }}" alt="Photo 3"
-        width="500" height="500">
-        <img class="slide" src="{{ url_for('static', filename='photos/photo9.jpg') }}" alt="Photo 3"
-        width="500" height="500">
-        <img class="slide" src="{{ url_for('static', filename='photos/photo10.jpg') }}" alt="Photo 3"
-        width="500" height="500">
-        <img class="slide" src="{{ url_for('static', filename='photos/photo11.jpg') }}" alt="Photo 3"
-        width="500" height="500">
-        <img class="slide" src="{{ url_for('static', filename='photos/photo12.jpg') }}" alt="Photo 3"
-        width="500" height="500">
-        <img class="slide" src="{{ url_for('static', filename='photos/photo13.jpg') }}" alt="Photo 3"
-        width="500" height="500">
-        <img class="slide" src="{{ url_for('static', filename='photos/photo14.jpg') }}" alt="Photo 3"
-        width="500" height="500">
-        <img class="slide" src="{{ url_for('static', filename='photos/photo15.jpg') }}" alt="Photo 3"
-        width="500" height="500">
-        <img class="slide" src="{{ url_for('static', filename='photos/photo16.jpg') }}" alt="Photo 3"
-        width="500" height="500">
-        <img class="slide" src="{{ url_for('static', filename='photos/photo17.jpg') }}" alt="Photo 3"
-        width="500" height="500">
-       
-        <!-- Add more images as needed -->
-
-        <!-- Navigation buttons -->
-        <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
-        <a class="next" onclick="changeSlide(1)">&#10095;</a>
-    </div>
-
-    <script src="{{ url_for('static', filename='js/slideshow.js') }}"></script>
-
+        <!-- PHOTO GRID: 8 curated photos in polaroid-style layout -->
+        <!-- CSS applies polaroid styling with white borders and shadows -->
+        <div class="photo-grid">
+            <div class="photo-item">
+                <img src="{{ url_for('static', filename='photos/featured_2.jpg') }}" alt="Moose photo 1">
+            </div>
+            <div class="photo-item">
+                <img src="{{ url_for('static', filename='photos/photo2.jpg') }}" alt="Moose photo 2">
+            </div>
+            <div class="photo-item">
+                <img src="{{ url_for('static', filename='photos/photo3.jpg') }}" alt="Moose photo 3">
+            </div>
+            <div class="photo-item">
+                <img src="{{ url_for('static', filename='photos/photo4.jpeg') }}" alt="Moose photo 4">
+            </div>
+            <div class="photo-item">
+                <img src="{{ url_for('static', filename='photos/photo9.jpg') }}" alt="Moose photo 5">
+            </div>
+            <div class="photo-item">
+                <img src="{{ url_for('static', filename='photos/photo13.jpg') }}" alt="Moose photo 6">
+            </div>
+            <div class="photo-item">
+                <img src="{{ url_for('static', filename='photos/photo1.jpg') }}" alt="Moose photo 7">
+            </div>
+            <div class="photo-item">
+                <img src="{{ url_for('static', filename='photos/photo17.jpg') }}" alt="Moose photo 8">
+            </div>
+        </div>
+    </main>
 {% endblock %}
