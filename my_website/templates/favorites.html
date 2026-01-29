@@ -1,0 +1,53 @@
+<!-- templates/favorites.html -->
+<!-- FAVORITES PAGE: Shows Moose's favorite things in 6 categories -->
+<!-- Uses colorful scrapbook-style cards with different colored borders and rotations -->
+
+{% extends 'base.html' %}
+
+{% block title %}Moose's Favorites{% endblock %}
+
+{% block main_content %}
+    <main class="content-page">
+        <h1>Moose's Favorites</h1>
+        
+        <!-- FAVORITES GRID: 6 cards with different colored borders -->
+        <!-- CSS applies unique border colors and rotations to each card using nth-child -->
+        <div class="favorites-grid">
+            <!-- Card 1: Red border, rotated -1deg -->
+            <div class="favorite-card">
+                <h3>Toys</h3>
+                <p>Tennis balls and anything that squeaks. The louder, the better.</p>
+            </div>
+
+            <!-- Card 2: Blue border, rotated 2deg -->
+            <div class="favorite-card">
+                <h3>Activities</h3>
+                <p>Walks are life. Morning walks, evening walks, any-time-of-day walks.</p>
+            </div>
+
+            <!-- Card 3: Green border, rotated -2deg -->
+            <div class="favorite-card">
+                <h3>Treats</h3>
+                <p>All of them. Every single one. No exceptions.</p>
+            </div>
+
+            <!-- Card 4: Orange border, rotated 1deg -->
+            <div class="favorite-card">
+                <h3>Nap Spots</h3>
+                <p>Sunny spots on the floor, the couch, your lap during stretches.</p>
+            </div>
+
+            <!-- Card 5: Purple border, rotated -1.5deg -->
+            <div class="favorite-card">
+                <h3>Sounds</h3>
+                <p>Has a whole vocabulary of woofs, whines, and grumbles for every occasion.</p>
+            </div>
+
+            <!-- Card 6: Teal border, rotated 1.5deg -->
+            <div class="favorite-card">
+                <h3>People</h3>
+                <p>Everyone. Moose has never met a stranger, only friends he hasn't played with yet.</p>
+            </div>
+        </div>
+    </main>
+{% endblock %}

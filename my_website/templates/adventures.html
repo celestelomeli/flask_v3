@@ -1,0 +1,67 @@
+<!-- templates/adventures.html -->
+<!-- ADVENTURES PAGE: Shows all the places Moose has visited -->
+<!-- Uses sticky note/bulletin board styling with rotated cards -->
+
+{% extends 'base.html' %}
+
+{% block title %}Moose's Adventures{% endblock %}
+
+{% block main_content %}
+    <main class="content-page">
+        <h1>Adventures</h1>
+        <p class="gallery-intro">Places Moose has explored</p>
+        
+        <!-- ADVENTURES GRID: 12 location cards styled as sticky notes -->
+        <!-- Each card has a unique rotation applied via CSS nth-child selectors -->
+        <div class="adventures-grid">
+            <div class="adventure-card">
+                <h3>📍 Lake Tahoe</h3>
+                <p>Mountain lakes & trails</p>
+            </div>
+            <div class="adventure-card">
+                <h3>📍 Mammoth</h3>
+                <p>Alpine adventures</p>
+            </div>
+            <div class="adventure-card">
+                <h3>📍 Lassen National Park</h3>
+                <p>Volcanic landscapes</p>
+            </div>
+            <div class="adventure-card">
+                <h3>📍 Mendocino</h3>
+                <p>Coastal cliffs & beaches</p>
+            </div>
+            <div class="adventure-card">
+                <h3>📍 Las Vegas</h3>
+                <p>Desert road trip</p>
+            </div>
+            <div class="adventure-card">
+                <h3>📍 Yucca Valley</h3>
+                <p>Joshua Tree exploration</p>
+            </div>
+            <div class="adventure-card">
+                <h3>📍 Half Moon Bay</h3>
+                <p>Beach walks & ocean views</p>
+            </div>
+            <div class="adventure-card">
+                <h3>📍 Sacramento</h3>
+                <p>Home base</p>
+            </div>
+            <div class="adventure-card">
+                <h3>📍 San Francisco</h3>
+                <p>City adventures</p>
+            </div>
+            <div class="adventure-card">
+                <h3>📍 Point Reyes</h3>
+                <p>Coastal trails & lighthouse</p>
+            </div>
+            <div class="adventure-card">
+                <h3>📍 Los Angeles</h3>
+                <p>Beach cities & urban exploring</p>
+            </div>
+            <div class="adventure-card">
+                <h3>📍 Big Bear</h3>
+                <p>Mountain lake getaway</p>
+            </div>
+        </div>
+    </main>
+{% endblock %}
